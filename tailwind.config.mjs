@@ -15,7 +15,11 @@ export default {
       fontFamily: {
         ovo: ['Ovo', 'sans-serif'],
         outfit: ['Outfit', 'sans-serif'],
-      }
+      },
+      boxShadow: {
+        'black': '4px 4px 0 2px #000',
+        'white': '4px 4px 0 2px #fff',
+      },
     },
   },
   plugins: [],
