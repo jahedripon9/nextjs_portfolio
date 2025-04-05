@@ -20,6 +20,9 @@ export default {
         'black': '4px 4px 0 2px #000',
         'white': '4px 4px 0 2px #fff',
       },
+      gridTemplateColumns: {
+        'auto': 'repeat(auto-fit, minmax(250px, 1fr))',
+      },
     },
   },
   plugins: [],
