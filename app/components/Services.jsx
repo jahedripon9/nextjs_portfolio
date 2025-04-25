@@ -1,27 +1,63 @@
 import { assets, serviceData } from '@/assets/assets'
 import Image from 'next/image'
 import React from 'react'
+import { motion } from "motion/react"
 
 const Services = () => {
     return (
-        <div id='services' className='w-full px-[12%] py-10 scroll-mt-20 '>
-            <h4 className='text-center mb-2 text-lg font-ovo'>What I offer</h4>
-            <h2 className='text-center text-5xl font-ovo'>My Services</h2>
-            <p className='text-center max-w-2xl mx-auto mt-5 mb-12 font-ovo'>I am a frontend developer from California, USA with 10 years of experience in multiple companies like Microsoft, Tesla and Apple.</p>
+        <motion.div
 
-            <div className='grid grid-cols-auto gap-6 my-10'>
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ duration: 1 }}
+
+            id='services' className='w-full px-[12%] py-10 scroll-mt-20 '>
+            <motion.h4
+
+                initial={{ y: -20, opacity: 0 }}
+                whileInView={{ y: 0, opacity: 1 }}
+                transition={{ delay: 0.3, duration: 1 }}
+
+                className='text-center mb-2 text-lg font-ovo'>What I offer</motion.h4>
+            <motion.h2
+
+                initial={{ y: -20, opacity: 0 }}
+                whileInView={{ y: 0, opacity: 1 }}
+                transition={{ delay: 0.5, duration: 0.5 }}
+
+                className='text-center text-5xl font-ovo'>My Services</motion.h2>
+            <motion.p
+
+                initial={{ y: -20, opacity: 0 }}
+                whileInView={{ y: 0, opacity: 1 }}
+                transition={{ delay: 0.7, duration: 0.5 }}
+
+                className='text-center max-w-2xl mx-auto mt-5 mb-12 font-ovo'>I am a frontend developer from California, USA with 10 years of experience in multiple companies like Microsoft, Tesla and Apple.</motion.p>
+
+            <motion.div
+
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                transition={{ delay: 0.9, duration: 0.6 }}
+
+                className='grid grid-cols-auto gap-6 my-10'>
                 {serviceData.map(({ icon, title, description, link }, index) => (
-                    <div key={index} className='border border-gray-400 rounded-lg px-8 py-12 hover:shadow-black cursor-pointer hover:bg-lightHover hover:-translate-y-1 duration-500 dark:hover:bg-darkHover dark:hover:shadow-white'>
+                    <motion.div
+                        initial={{ scale: 0 }}
+                        whileInView={{ scale: 1 }}
+                        transition={{ duration: 0.8, type: "spring", stiffness: 100 }}
+
+                        key={index} className='border border-gray-400 rounded-lg px-8 py-12 hover:shadow-black cursor-pointer hover:bg-lightHover hover:-translate-y-1 duration-500 dark:hover:bg-darkHover dark:hover:shadow-white'>
                         <Image className='w-10' src={icon} alt='img' />
                         <h3 className='text-lg my-4 text-gray-700 dark:text-white/80'>{title}</h3>
                         <p className='text-sm text-gray-600 leading-5 dark:text-white/80'>{description}</p>
                         <a className='flex items-center gap-2 text-sm mt-5' href={link}>
                             Read more <Image src={assets.right_arrow} alt='img' className='w-4' />
                         </a>
-                    </div>
+                    </motion.div>
                 ))}
-            </div>
-        </div>
+            </motion.div>
+        </motion.div>
     )
 }
 
